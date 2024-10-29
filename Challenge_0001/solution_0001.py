@@ -53,7 +53,7 @@ def count_paths_recursive(n: int, m: int) -> int:
     else:
         for i in range(nrows):
             npaths += count_paths_recursive(nrows-1, i)
-    return npathss
+    return npaths
 
 # Test cases
 def test_count_paths():
