@@ -31,6 +31,30 @@ def count_paths(n: int, m: int) -> int:
             
     return dp[n-1][m-1]
 
+def count_paths_recursive(n: int, m: int) -> int:
+    """
+    Count the number of paths from top-left to bottom-right corner in an N x M grid.
+    Can only move right or down.
+    
+    Args:
+        n (int): Number of rows
+        m (int): Number of columns
+    
+    Returns:
+        int: Number of possible paths
+    
+    Time Complexity: To Compute
+    Space Complexity: To Compute
+    """
+    nrows, ncols = (n, m) if n<m else (m,n)
+    npaths = 0
+    if nrows==1:
+        npaths = 1
+    else:
+        for i in range(nrows):
+            npaths += count_paths_recursive(nrows-1, i)
+    return npathss
+
 # Test cases
 def test_count_paths():
     assert count_paths(2, 2) == 2, "2x2 grid should have 2 paths"
