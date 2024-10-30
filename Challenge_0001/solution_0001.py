@@ -34,7 +34,7 @@ def count_paths(n: int, m: int) -> int:
 def count_paths_recursive(n: int, m: int) -> int:
     """
     Count the number of paths from top-left to bottom-right corner in an N x M grid.
-    Can only move right or down.
+    Recursive solution. Can only move right or down.
     
     Args:
         n (int): Number of rows
@@ -43,17 +43,15 @@ def count_paths_recursive(n: int, m: int) -> int:
     Returns:
         int: Number of possible paths
     
-    Time Complexity: To Compute
-    Space Complexity: To Compute
+    Time Complexity: O(2^(n+m))
+    Space Complexity: O(n+m) due to recursion stack
     """
-    nrows, ncols = (n, m) if n<m else (m,n)
-    npaths = 0
-    if nrows==1:
-        npaths = 1
-    else:
-        for i in range(nrows):
-            npaths += count_paths_recursive(nrows-1, i)
-    return npaths
+    # Base cases
+    if n == 1 or m == 1:
+        return 1
+        
+    # Recursive case: sum of paths from above and from left
+    return count_paths_recursive(n-1, m) + count_paths_recursive(n, m-1)
 
 # Test cases
 def test_count_paths():
@@ -62,6 +60,11 @@ def test_count_paths():
     assert count_paths(1, 1) == 1, "1x1 grid should have 1 path"
     assert count_paths(3, 2) == 3, "3x2 grid should have 3 paths"
     assert count_paths(2, 3) == 3, "2x3 grid should have 3 paths"
+    assert count_paths_recursive(2, 2) == 2, "2x2 grid should have 2 paths"
+    assert count_paths_recursive(5, 5) == 70,"5x5 grid should have 70 paths"
+    assert count_paths_recursive(1, 1) == 1, "1x1 grid should have 1 path"
+    assert count_paths_recursive(3, 2) == 3, "3x2 grid should have 3 paths"
+    assert count_paths_recursive(2, 3) == 3, "2x3 grid should have 3 paths"
     print("All test cases passed!")
 
 test_count_paths()
