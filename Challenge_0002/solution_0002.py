@@ -4,10 +4,10 @@ M = [[1, 3, 7, 10, 15, 20],
  [10, 11, 12, 23, 30, 35],
  [20, 25, 30, 35, 40, 45]]
 
-i1 = 1
+i1 = 0
 j1 = 2
-i2 = 2
-j2 = 3
+i2 = 4
+j2 = 5
 
 result = 0
 nops = 0
@@ -64,11 +64,11 @@ for j in range(j2+1, len(M[0])):
         nops+=1
         print(M[i][j])
         if M[i][j] <= M[i2][j2]:
-            result+=(len(M)-i-i2-1)
-            print(f'subresult: {(len(M)-i-i2-1)}')
+            result+=(i2-i)
+            print(f'subresult: {(i2-i)}')
             break
         elif i==0:
-            result+=len(M)-i2
-            print(f'subresult: {len(M)-i2}')
+            result+=i2+1
+            print(f'subresult: {i2+1}')
 
 print(f'Reduced computation number of ops: {nops}. Result: {result}')
