@@ -16,3 +16,14 @@ The time complexity of this approach is O(result), where "result" is the number 
 Both functions also print the number of operations performed during the computation.
 
 The example usage at the end of the code demonstrates how to call these functions with a sample matrix and the expected output.
+
+## C++ Solution
+
+The C++ code closely follows the structure and logic of the original Python implementation. The main differences are:
+
+Use of C++ standard library containers (std::vector) instead of Python lists.
+C++ style function definitions and variable declarations.
+Use of std::cout for printing output.
+Removal of the docstrings and function annotations (since they are not part of the C++ language).
+
+The time and space complexities of the two functions remain the same as in the Python version.
