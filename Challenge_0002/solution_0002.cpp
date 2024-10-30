@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 
-int countElementsBruteForce(const std::vector<std::vector<int>>& matrix, int i1, int j1, int i2, int j2) {
+int countElementsBruteForce(const std::vector<std::vector<int> >& matrix, int i1, int j1, int i2, int j2) {
     int n = matrix.size(), m = matrix[0].size();
     int lower = matrix[i1][j1], upper = matrix[i2][j2];
     int result = 0, nops = 0;
@@ -17,7 +17,7 @@ int countElementsBruteForce(const std::vector<std::vector<int>>& matrix, int i1,
     return result;
 }
 
-int countElements(const std::vector<std::vector<int>>& matrix, int i1, int j1, int i2, int j2) {
+int countElements(const std::vector<std::vector<int> >& matrix, int i1, int j1, int i2, int j2) {
     int n = matrix.size(), m = matrix[0].size();
     int lower = matrix[i1][j1], upper = matrix[i2][j2];
     int result = 0, nops = 0;
@@ -75,7 +75,7 @@ int countElements(const std::vector<std::vector<int>>& matrix, int i1, int j1, i
 }
 
 int main() {
-    std::vector<std::vector<int>> matrix = {{1, 3, 7, 10, 15, 20},
+    std::vector<std::vector<int> > matrix = {{1, 3, 7, 10, 15, 20},
                                            {2, 6, 9, 14, 22, 25},
                                            {3, 8, 10, 15, 25, 30},
                                            {10, 11, 12, 23, 30, 35},
