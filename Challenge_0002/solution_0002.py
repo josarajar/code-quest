@@ -29,8 +29,9 @@ def count_elements_brute_force(matrix, i1, j1, i2, j2):
                 result+=1
             nops+=1
     print(f'Full computation number of ops: {nops}. Result: {result}')
+    return result
 
-def count_range_elements(matrix, i1, j1, i2, j2):
+def count_elements(matrix, i1, j1, i2, j2):
     """
     Given a sorted matrix A, count the number of elements smaller than A[i1, j1] 
     and larger than A[i2, j2].
@@ -106,4 +107,5 @@ matrix = [[1, 3, 7, 10, 15, 20],
           [10, 11, 12, 23, 30, 35],
           [20, 25, 30, 35, 40, 45]]
 
-print(count_range_elements(matrix, 1, 1, 3, 3))  # Output: 14
+print(count_elements_brute_force(matrix, 1, 1, 3, 3))  # Output: 14
+print(count_elements(matrix, 1, 1, 3, 3))  # Output: 14
